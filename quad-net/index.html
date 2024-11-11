@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP request for Miniquad rendering library using quad-net plugin</title>
+</head>
+<body>
+<h2>HTTP Request from inside WASM using quad-net plugin for Miniquad</h2>
+
+<p>This example uses <a href="https://github.com/not-fl3/quad-net">quad-net</a> network plugin for
+    <a href="https://github.com/not-fl3/miniquad">Miniquad rendering library</a>
+    or <a href="https://github.com/not-fl3/macroquad">Macroquad game engine</a>,
+    all implemented in Rust.</p>
+<p>This demo uses (slightly patched) code from official quad-net
+    <a href="https://github.com/not-fl3/quad-net/blob/31796d4ed5c9cce57c7702d18b6140d5ffacfccf/examples/http_request.rs">example</a>.</p>
+<p>See the output in browser developer console.</p>
+
+<p>Actual code:</p>
+<pre>
+// Based on https://github.com/not-fl3/quad-net/blob/31796d4ed5c9cce57c7702d18b6140d5ffacfccf/examples/http_request.rs
+use macroquad::prelude::*;
+use quad_net::http_request::RequestBuilder;
+
+#[macroquad::main("Http request demo")]
+async fn main() {
+    let mut request = RequestBuilder::new("https://httpbin.org/anything").send();
+
+    loop {
+        if let Some(data) = request.try_recv() {
+            info!("Done! {}", data.unwrap());
+        }
+        next_frame().await;
+    }
+}
+</pre>
+
+<hr/>
+<iframe src="examples/web/index.html"  style="min-width: 60%; min-height: 10em">
+ See <a href="examples/web/index.html">this</a> if your browser has iframes disabled.
+</iframe>
+<section>
+    <h4>Info</h4>
+    <ul>
+        <li><a href="https://github.com/wasm-outbound-http-examples/rust/tree/main/browser-quad-net">Demo source code and patches</a></li>
+        <li>Code is based on <a href="https://github.com/not-fl3/quad-net/blob/31796d4ed5c9cce57c7702d18b6140d5ffacfccf/examples/http_request.rs">official example</a></li>
+        <li>Versions used on the moment of build: <small>Rust 1.82.0,
+            quad-net: <a href="https://github.com/not-fl3/quad-net/tree/31796d4ed5c9cce57c7702d18b6140d5ffacfccf">commit 31796d4ed</a>.
+        </small></li>
+    </ul>
+</section>
+<footer><small>Created for (wannabe-awesome) <a href="https://github.com/vasilev/HTTP-request-from-inside-WASM">list</a></small></footer>
+</body>
+</html>
