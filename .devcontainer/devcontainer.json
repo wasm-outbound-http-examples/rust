@@ -1,0 +1,7 @@
+{
+  "name": "Rust: HTTP request from WASM",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/postCreate.sh"
+}
