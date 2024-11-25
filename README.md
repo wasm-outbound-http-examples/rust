@@ -32,3 +32,34 @@ Use `quad-net` plugin for Miniquad to send HTTP requests from web browser.
 </td>
 </tr>
 </table>
+
+### WASI / Standalone / Server-side Examples
+
+<table>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>Description</th>
+<th>Compatibility</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
+
+[waki](wasi-waki/README.md)
+
+</td>
+<td>
+
+Use `waki` WASI HTTP library to send HTTP requests from Wasmtime.
+
+</td>
+<td>
+
+WASI Preview 2 / WASI 0.2
+
+</td>
+</tr>
+</table>
+
+<sub>Created for (wannabe-awesome) [list](https://github.com/vasilev/HTTP-request-from-inside-WASM)</sub>
