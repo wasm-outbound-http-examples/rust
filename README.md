@@ -60,6 +60,24 @@ WASI Preview 2 / WASI 0.2
 
 </td>
 </tr>
+<tr>
+<td>2</td>
+<td>
+
+[wstd](wasi-wstd/README.md)
+
+</td>
+<td>
+
+Use `wstd` WASI "stdlib" to send HTTP requests from Wasmtime.
+
+</td>
+<td>
+
+WASI Preview 2 / WASI 0.2
+
+</td>
+</tr>
 </table>
 
 <sub>Created for (wannabe-awesome) [list](https://github.com/vasilev/HTTP-request-from-inside-WASM)</sub>
