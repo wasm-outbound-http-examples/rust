@@ -64,12 +64,30 @@ WASI Preview 2 / WASI 0.2
 <td>2</td>
 <td>
 
-[wstd](wasi-wstd/README.md)
+[`wstd::http::Client`](wasi-wstd/README.md)
 
 </td>
 <td>
 
 Use `wstd` WASI "stdlib" to send HTTP requests from Wasmtime.
+
+</td>
+<td>
+
+WASI Preview 2 / WASI 0.2
+
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+
+[`wstd::net::TcpStream`](wasip2-sockets-wstd/README.md)
+
+</td>
+<td>
+
+Use "raw" wasip2 sockets and `wstd`'s `TcpStream` to send HTTP requests from Wasmtime.
 
 </td>
 <td>
